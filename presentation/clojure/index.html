@@ -60,84 +60,245 @@
         </section>
 
         <section>
-            <h2>Особенности clojure</h2>
-            <ul>
-                <li>язык общего назначения</li>
-                <li>современный диалект лиспа</li>
-                <li>функциональный</li>
-                <li>динамическая типизация</li>
-                <li>упрощенная работа с многопоточностью</li>
-                <li>система макросов</li>
-                <li>разрабатывался для/работает на JVM</li>
-            </ul>
+            <section>
+                <h2>Что особенного в clojure?</h2>    
+            </section>
+
+            <section>
+                <h2>Clojure это современный диалект lisp</h2>
+                <div>
+                    <img data-src="http://www.lisperati.com/lisplogo_fancy_256.png" alt="Down arrow" style="border: none; box-shadow: none;">
+                </div>
+            </section>
+
+            <section>
+                <h2>Джон Маккарти</h2>
+                <ul>
+                    <li>американский информатик</li>
+                    <li>автор термина "искусственный интелект"</li>
+                    <li>в 1958 году изобрел язык lisp</li>
+                    <li>основоположник функционального программирования</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Особенности lisp</h2>
+                <ul>
+                    <li>first class functions</li>
+                    <li>garbage collection</li>
+                    <li>dynamic typing</li>
+                    <li>homoiconicity</li>
+                    <li>macros</li>
+                </ul>
+            </section>
         </section>
 
         <section>
-            <h2>Почему JVM?</h2>
-            <ul>
-                <li>Надежность и производительность</li>
-                <li>Управление памятью и ресурсами
-                    <ul><li>GC</li></ul>
-                </li>
-                <li>Система типов</li>
-                <li>Библиотеки
-                    <ul>
-                        <li>Огромная экосистема</li>
-                    </ul>
-                </li>
-                <li>Байткод + jit компиляция</li>
-                <li>Деплоймент
-                    <ul>
-                        <li>Just jar</li>
-                        <li>Все как раньше</li>
-                    </ul>
-                </li>
-            </ul>
+            <section>
+                <h2>Functional programming in clojure</h2>
+            </section>
+
+            <section>
+                <ul>
+                    <li>
+                        Отличительная особенность ФП - это подход работе с изменяемым состоянием
+                    </li>
+                    <li>
+                        Императивная парадигма поощряет изменяемое состояние, используем когда удобно
+                    </li>
+                    <li>
+                        Функциональная парадигма: максимально избегаем изменяемого состояния
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Referential transparency</h2>
+                <p>
+                    Ссылочная прозрачность - возможность заменить выражение на его результат без изменения поведения программы
+                </ul>
+            </section>
+
+            <section>
+                <h2>Чистые функции</h2>
+                <ul>
+                    <li>без побочных эффектов</li>
+                    <li>хорошо тестируются</li>
+                    <li>хорошо компонуются</li>
+                    <li>легко заменяются</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Монады</h2>
+                <p>
+                    Монады - абстракция в чистых функциональных языках, инкапсуляция функций с побочными эффектами (например IO в Haskell)
+                </p>
+            </section>
+
+            <section>
+                <h2>В clojure монад нет</h2>
+                <ul>
+                    <li>
+                        разделение чистого кода, от кода с побочными эффектами - на усмотрение программиста
+                    </li>
+                </ul>
+            </section>
         </section>
 
         <section>
-            <h2>Lisp</h2>
-            <ul>
-                <li>Джон Маккарти - 1960 год</li>
-            </ul>
+            <section>
+                <h2>Immutability in clojure</h2>
+            </section>
 
-            <div>
-                <img class="fragment" data-src="http://www.lisperati.com/lisplogo_fancy_256.png" alt="Down arrow" style="border: none; box-shadow: none;">
-            </div>
+            <section>
+                <h2>Неизменяемые структуры данные</h2>
+                <ul>
+                    <li><span class="blue">2 + 2 -> 4</span></li>
+                    <li><span class="blue">[1 2 3] conj 4 -> новый вектор [1 2 3 4]</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Structural sharing</h2>
+                <div>
+                    <img data-src="http://image.slidesharecdn.com/clojurescriptintroduction-150823120942-lva1-app6892/95/clojurescript-introduction-13-638.jpg?cb=1440331893" alt="Down arrow">
+                </div>
+            </section>
+
+            <section>
+                <h2>Efficient by time and space complexity</h2>
+            </section>
         </section>
 
         <section>
-            <h2>Clojure как Lisp</h2>
-            <ul>
-                <li>динамическая типизация</li>
-                <li>очень маленькое ядро
-                    <ul>
-                        <li>всего 10 специальных форм</li>
-                    </ul>
-                </li>
-                <li>"код как данные" homoiconicity</li>
-                <li>reader</li>
-                <li>repl</li>
-                <li>абстракция sequence</li>
-                <li>макросы</li>
-            </ul>
+            <section>
+                <h2>Clojure is designed for concurrency</h2>
+                <ul>
+                    <li>Reference types: atom, ref, agent</li>
+                    <li>No lock based synchronization</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Software transactional memory</h2>
+                <ul>
+                    <li>транзакция - часть кода, которая читает и пишет в разделяемую память</li>
+                    <li>чтение и запись логически происходит в один момент времени, промежуточные состояния не видны другим транзакциям</li>
+                    <li>транзакция либо выполняется полностью, либо ретраится</li>
+                </ul>
+
+                <p>
+                    <small>
+                        <a href="https://en.wikipedia.org/wiki/Software_transactional_memory">https://en.wikipedia.org/wiki/Software_transactional_memory</a>
+                    </small>
+                </p>
+            </section>
+
+            <section>
+                <h2>core.async</h2>
+                <p>
+                    Go blocks and channels with core.async lib
+                </p>
+
+                <div>
+                    <img data-src="http://d.gr-assets.com/books/1299812872l/808812.jpg" alt="Down arrow">
+                </div>
+            </section>
         </section>
 
         <section>
-            <h2>Почему Lisp?</h2>
+            <h2>Clojure is hosted on jvm</h2>
+
             <ul>
-                <li>Максимальная интерактивность</li>
-                <li>Позволяет сфокусироваться на проблеме</li>
-                <li>Позволяет двигаться маленькими шагами</li>
-                <li>Функции отлично компонуются и тестируются</li>
-                <li>Улучшенный Lisp
-                    <ul>
-                        <li>литералы структур данных <span class="blue">{}, [], #{}</span></li>
-                        <li>линейный, мало скобок <span class="blue">comp, ->, ->></span></li>
-                    </ul>
-                </li>
+                <li>Java interop and vice versa</li>
+                <li>Unlimited access to all java libraries</li>
+                <li>Compile to bytecode</li>
+                <li>Provided as a clojure.jar (just put it in classpath to start)</li>
+                <li>The same build and deploy process (jar, war)</li>
             </ul>
         </section>
+
+
+        <!-- <section>
+             <h2>Особенности clojure</h2>
+             <ul>
+             <li>язык общего назначения</li>
+             <li>современный диалект лиспа</li>
+             <li>функциональный</li>
+             <li>динамическая типизация</li>
+             <li>упрощенная работа с многопоточностью</li>
+             <li>система макросов</li>
+             <li>разрабатывался для/работает на JVM</li>
+             </ul>
+             </section> -->
+
+        <!-- <section>
+             <h2>Почему JVM?</h2>
+             <ul>
+             <li>Надежность и производительность</li>
+             <li>Управление памятью и ресурсами
+             <ul><li>GC</li></ul>
+             </li>
+             <li>Система типов</li>
+             <li>Библиотеки
+             <ul>
+             <li>Огромная экосистема</li>
+             </ul>
+             </li>
+             <li>Байткод + jit компиляция</li>
+             <li>Деплоймент
+             <ul>
+             <li>Just jar</li>
+             <li>Все как раньше</li>
+             </ul>
+             </li>
+             </ul>
+             </section> -->
+
+        <!-- <section>
+             <h2>Lisp</h2>
+             <ul>
+             <li>Джон Маккарти - 1960 год</li>
+             </ul>
+
+             <div>
+             <img class="fragment" data-src="http://www.lisperati.com/lisplogo_fancy_256.png" alt="Down arrow" style="border: none; box-shadow: none;">
+             </div>
+             </section> -->
+
+        <!-- <section>
+             <h2>Clojure как Lisp</h2>
+             <ul>
+             <li>динамическая типизация</li>
+             <li>очень маленькое ядро
+             <ul>
+             <li>всего 10 специальных форм</li>
+             </ul>
+             </li>
+             <li>"код как данные" homoiconicity</li>
+             <li>reader</li>
+             <li>repl</li>
+             <li>абстракция sequence</li>
+             <li>макросы</li>
+             </ul>
+             </section> -->
+
+        <!-- <section>
+             <h2>Почему Lisp?</h2>
+             <ul>
+             <li>Максимальная интерактивность</li>
+             <li>Позволяет сфокусироваться на проблеме</li>
+             <li>Позволяет двигаться маленькими шагами</li>
+             <li>Функции отлично компонуются и тестируются</li>
+             <li>Улучшенный Lisp
+             <ul>
+             <li>литералы структур данных <span class="blue">{}, [], #{}</span></li>
+             <li>линейный, мало скобок <span class="blue">comp, ->, ->></span></li>
+             </ul>
+             </li>
+             </ul>
+             </section> -->
 
         <section>
             <h2>Базовые типы</h2>
@@ -166,48 +327,48 @@
             </ul>
         </section>
 
-        <section>
-            <h2>Функциональный язык</h2>
-            <ul>
-                <li>неизменяемые/персистентные структуры данных</li>
-                <li>функции высшего порядка</li>
-                <li>чистые функции в ядре языка</li>
-                <li>конструкция loop/recur</li>
-            </ul>
-        </section>
+        <!-- <section>
+             <h2>Функциональный язык</h2>
+             <ul>
+             <li>неизменяемые/персистентные структуры данных</li>
+             <li>функции высшего порядка</li>
+             <li>чистые функции в ядре языка</li>
+             <li>конструкция loop/recur</li>
+             </ul>
+             </section> -->
 
-        <section>
-            <h2>Иммутабельность</h2>
-            <ul>
-                <li>все структуры данных иммутабельны</li>
-                <li><span class="blue">2 + 2 -> 4</span></li>
-                <li><span class="blue">[1 2 3] conj [5 6 7] -> новый вектор [1 2 3 5 6 7]</span></li>
-                <li>эффективны</li>
-            </ul>
-        </section>
+        <!-- <section>
+             <h2>Иммутабельность</h2>
+             <ul>
+             <li>все структуры данных иммутабельны</li>
+             <li><span class="blue">2 + 2 -> 4</span></li>
+             <li><span class="blue">[1 2 3] conj [5 6 7] -> новый вектор [1 2 3 5 6 7]</span></li>
+             <li>эффективны</li>
+             </ul>
+             </section> -->
 
-        <section>
-            <h2>Structural sharing</h2>
-            <ul>
-                <li>структуры реализованы ввиде деревьев</li>
-            </ul>
-            <div>
-                <img data-src="http://image.slidesharecdn.com/clojurescriptintroduction-150823120942-lva1-app6892/95/clojurescript-introduction-13-638.jpg?cb=1440331893" alt="Down arrow">
-            </div>
-        </section>
+        <!-- <section>
+             <h2>Structural sharing</h2>
+             <ul>
+             <li>структуры реализованы ввиде деревьев</li>
+             </ul>
+             <div>
+             <img data-src="http://image.slidesharecdn.com/clojurescriptintroduction-150823120942-lva1-app6892/95/clojurescript-introduction-13-638.jpg?cb=1440331893" alt="Down arrow">
+             </div>
+             </section> -->
 
-        <section>
-            <h2>Выражения</h2>
-            <ul>
-                <li>все является выражением</li>
-                <li>всё эвалится в себя, кроме
-                    <ul>
-                        <li>символов - смотрят к чему привязаны, сначала локально потом глобально</li>
-                        <li>списков - вызов чего-либо</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+        <!-- <section>
+             <h2>Выражения</h2>
+             <ul>
+             <li>все является выражением</li>
+             <li>всё эвалится в себя, кроме
+             <ul>
+             <li>символов - смотрят к чему привязаны, сначала локально потом глобально</li>
+             <li>списков - вызов чего-либо</li>
+             </ul>
+             </li>
+             </ul>
+             </section> -->
 
         <section>
             <section>
@@ -227,8 +388,13 @@
         <section>
             <h2>S-expression</h2>
             <ul>
-                <li>Абстрактное синтаксическое дерево <span class="blue">AST</span></li>
-                <li>например <span class="blue">(* 2 (+ 3 4))</span></li>
+                <li>Абстрактное синтаксическое дерево <span class="blue">AST</span>
+                    <ul>
+                        <li>symbolic expression - notation for nested list (tree-structured) data</li>
+                    </ul>
+                </li>
+                <li><span class="blue">(* 2 (+ 3 4))</span></li>
+                <li class="fragment"><span class="blue">(map inc [1 2 3])</span> <span class="fragment"> -> (2 3 4)</span></li>
             </ul>
             <div class="fragment">
                 <img width="256" height="256" data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/S-expression_tree.svg/1000px-S-expression_tree.svg.png" alt="Down arrow">
@@ -256,18 +422,18 @@
             <p>Все остальное написано на clojure</p>
         </section>
 
-        <section>
-            <h2>Сила макросов</h2>
-            <ul>
-                <li>позволяют оставить ядро компактным</li>
-                <li>новые уровни абстракции</li>
-                <li>гомоиконность, код как данные</li>
-                <li>макрос это функция</li>
-                <li>вызываются компилятором</li>
-                <li>время выполнения vs время компиляции</li>
-                <li>принимают и возвращают структуры данных</li>
-            </ul>
-        </section>
+        <!-- <section>
+             <h2>Сила макросов</h2>
+             <ul>
+             <li>позволяют оставить ядро компактным</li>
+             <li>новые уровни абстракции</li>
+             <li>гомоиконность, код как данные</li>
+             <li>макрос это функция</li>
+             <li>вызываются компилятором</li>
+             <li>время выполнения vs время компиляции</li>
+             <li>принимают и возвращают структуры данных</li>
+             </ul>
+             </section> -->
 
         <section>
             <h2>Демо тайм</h2>
@@ -277,35 +443,33 @@
             </div>
         </section>
 
-        <section>
-            <h2>Многопоточность</h2>
-            <ul>
-                <li>STM - <span class="blue">software transactional memory</span></li>
-                    <ul>
-                        <li>механизм управления параллелизмом, аналогичный механизму транзакций баз данных для управления доступом к совместно используемой памяти</li>
-                        <li>альтернатива для синхронизации на основе блокировки</li>
-                    </ul>
-                <li>Реализации STM есть во многих языках: C/C++, C#, Common Lisp, Haskell, Java, OCaml, Perl, Python, Scala, Python</li>
-                <li>В Clojure поддержка STM встроена в ядро языка</li>
-            </ul>
-        </section>
+        <!-- <section>
+             <h2>Web</h2>
+             <ul>
+             <li>Ring - простая абстракция</li>
+             <li>request -> handler -> response</li>
+             <li>Handler</li>
+             <li>Request</li>
+             <li>Response</li>
+             <li>Middleware</li>
+             </ul>
 
-        <section>
-            <h2>Заключение</h2>
-            <ul>
-                <li>lisp</li>
-                <li>immutable&persistent</li>
-                <li>functional</li>
-                <li>marcos</li>
-                <li>concurrency: stm, core.async</li>
-                <li>repl</li>
-                <li>interactive development</li>
-                <li>jvm, java interop + libs</li>
-                <li>simple & fun</li>
-            </ul>
-        </section>
+             </section> -->
 
+        <!-- <section>
+             <h2>Многопоточность</h2>
+             <ul>
+             <li>STM - <span class="blue">software transactional memory</span></li>
+             <ul>
+             <li>механизм управления параллелизмом, аналогичный механизму транзакций баз данных для управления доступом к совместно используемой памяти</li>
+             <li>альтернатива для синхронизации на основе блокировки</li>
+             </ul>
+             <li>Реализации STM есть во многих языках: C/C++, C#, Common Lisp, Haskell, Java, OCaml, Perl, Python, Scala, Python</li>
+             <li>В Clojure поддержка STM встроена в ядро языка</li>
+             </ul>
+             </section> -->
 
+        
         <section>
             <section>
                 <h2>Tools</h2>
@@ -358,11 +522,43 @@
         <section>
             <h2>Разное</h2>
             <ul>
-                <li>книги</li>
-                <li>комьюнити</li>
+                <li>книги
+                    <ul>
+                        <li>
+                            <a href="http://clojure.org/community/books">http://clojure.org/community/books</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>комьюнити
+                    <ul>
+                        <li>
+                            clojurians #slack (5k users)
+                        </li>
+                    </ul>
+                </li>
                 <li>митапы</li>
+                <li>конференции</li>
             </ul>
         </section>
+
+        <section>
+            <h2>Заключение</h2>
+            <ul>
+                <li>lisp</li>
+                <li>immutable&persistent</li>
+                <li>functional</li>
+                <li>marcos</li>
+                <li>concurrency: stm, core.async</li>
+                <li>repl</li>
+                <li>interactive development</li>
+                <li>jvm, java interop + libs</li>
+                <li>simple & fun</li>
+                <li><a href="http://clojure.org/about/rationale">Clojure Rationale</a></li>
+            </ul>
+            
+        </section>
+
+
 
         <section>
             <h2>Спасибо!</h2>
