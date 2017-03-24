@@ -156,9 +156,9 @@
   [rec/alert-box
    :body [:div
           "Услуга успешно подключена, перейти на страницу "
-          [rec/hyperlink-href :label "бюджет счета" :href "/#/account/100"]
+          [rec/hyperlink-href :label "бюджет счета" :href "/cljs-demo/index.html#/account/100"]
           " или "
-          [rec/hyperlink-href :label "подключение услуги" :href "/#/service-purchase"]]])
+          [rec/hyperlink-href :label "подключение услуги" :href "/cljs-demo/index.html#/service-purchase"]]])
 
 (defn- purchase-button []
   [rec/button
@@ -252,7 +252,7 @@
 (defn link-to-home-page []
   [rec/hyperlink-href
    :label "go to Home Page"
-   :href "#/"])
+   :href "/cljs-demo/index.html#/"])
 
 (defn about-panel []
   [rec/v-box
@@ -295,11 +295,11 @@
                     :gap "10px"
                     :children [[rec/hyperlink-href
                                 :label "На главную"
-                                :href "#/"]
+                                :href "/cljs-demo/index.html#/"]
                                [rec/hyperlink-href
                                 :label "Бюджет/счета"
-                                :href "#/account/101"]
+                                :href "/cljs-demo/index.html#/account/101"]
                                [rec/hyperlink-href
                                 :label "Подключить услугу"
-                                :href "#/service-purchase"]]]
+                                :href "/cljs-demo/index.html#/service-purchase"]]]
                    [panels @active-panel @panel-params]]]])))
